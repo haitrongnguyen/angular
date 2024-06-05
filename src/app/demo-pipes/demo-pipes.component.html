@@ -1,0 +1,232 @@
+<p>Pipes trong angular là những hàm đơn giản được sử dụng trong các biểu thức template để chấp nhận một giá trị đầu vào và trả về một giá trị đã chuyển đổi.
+    Bạn có thể sử dụng pipes để chuyển đổi các chuỗi, số tiền, ngày tháng và dữ liệu khác để hiển thị trong template</p>
+
+<h1>1.Sử dụng LowerCasePipe và UpperCasePipe</h1>
+<div class="container">
+    <table class="table">
+        <thead>
+          <tr class="table-info">
+            <th scope="col">Name</th>
+            <th scope="col">Input</th>
+            <th scope="col">Output</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>In lowercase:</td>
+            <td>{{value}}</td>
+            <td>{{value | lowercase}}</td>
+          </tr>
+          <tr>
+            <td>In uppercase:</td>
+            <td>{{value}}</td>
+            <td>{{value | uppercase}}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+<br>
+<h1>2.Sử dụng SlicePipe</h1>
+<div class="container">
+    <div class="col col-lg-6">
+        <table class="table">
+            <thead>
+              <tr class="table-info">
+                <th scope="col">Name Pipe</th>
+                <th scope="col">Input</th>
+                <th scope="col">Output</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>slice:0:4</td>
+                    <td>{{str}}</td>
+                    <td>{{str | slice:0:4}}</td>
+                </tr>
+                <tr>
+                    <td>slice:4:0</td>
+                    <td>{{str}}</td>
+                    <td>{{str | slice:4:0}}</td>
+                </tr>
+                <tr>
+                    <td>slice:-4</td>
+                    <td>{{str}}</td>
+                    <td>{{str | slice:-4}}</td>
+                </tr>
+                <tr>
+                    <td>slice with list data in array</td>
+                    <td>{{collection}}</td>
+                    <td>{{collection | slice:0:3}}</td>
+                </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
+<br>
+
+<h1>3.Sử dụng DecimalPipe</h1>
+<div class="container">
+    <div class="col col-lg-6">
+        <table class="table">
+            <thead>
+              <tr class="table-info">
+                <th scope="col">Name Pipe</th>
+                <th scope="col">Input</th>
+                <th scope="col">Code</th>
+                <th scope="col">Output</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Decimal</td>
+                    <td>{{pi}}</td>
+                    <td>{{"pi | number"}}</td>
+                    <td>{{pi | number}}</td>
+                </tr>
+                <tr>
+                    <td>Decimal</td>
+                    <td>{{pi}}</td>
+                    <td>{{"pi | number:'4.1-5'"}}</td>
+                    <td>{{pi | number:'4.1-5'}}</td>
+                </tr>
+                <tr>
+                    <td>Decimal</td>
+                    <td>{{pi}}</td>
+                    <td>{{"pi | number:'4.1-5'"}}</td>
+                    <td>{{pi | number:'4.15-20'}}</td>
+                </tr>
+                <tr>
+                    <td>With digitsInfo and
+                        locale parameters specified:</td>
+                    <td>{{pi}}</td>
+                    <td>{{"pi | number:'4.1-5':'vi'"}}</td>
+                    <td>{{pi | number:'4.1-5':'vi-VN'}}</td>
+                </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
+
+<h1>4.Sử dụng PercentPipe</h1>
+<div class="container">
+    <div class="col col-lg-7">
+        <table class="table">
+            <thead>
+              <tr class="table-info">
+                <th scope="col">Name Pipe</th>
+                <th scope="col">Input</th>
+                <th scope="col">Code</th>
+                <th scope="col">Output</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>use percent:</td>
+                    <td>{{ a }}</td>
+                    <td>{{"a | percent"}}</td>
+                    <td>{{ a | percent }}</td>
+                </tr>
+                <tr>
+                    <td>use percent:</td>
+                    <td>{{ b }}</td>
+                    <td>{{ "b | percent:'4.3-5'" }}</td>
+                    <td>{{ b | percent:'4.3-5' }}</td>
+                </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
+<h1>5.Sử dụng CurrencyPipe</h1>
+<div class="container">
+    <div class="col col-lg-7">
+        <table class="table">
+            <thead>
+              <tr class="table-info">
+                <th scope="col">Name Pipe</th>
+                <th scope="col">Input</th>
+                <th scope="col">Code</th>
+                <th scope="col">Output</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>use currency:</td>
+                    <td>{{ a }}</td>
+                    <td>{{"a | currency"}}</td>
+                    <td>{{a | currency}}</td>
+                </tr>
+                <tr>
+                    <td>use currency:</td>
+                    <td>{{ a }}</td>
+                    <td>{{ "a | currency:'VND'" }}</td>
+                    <td>{{a | currency:'VND'}}</td>
+                </tr>
+                <tr>
+                    <td>use currency:</td>
+                    <td>{{ a }}</td>
+                    <td>{{ "a | currency:'VND':'code'" }}</td>
+                    <td>{{a | currency:'VND':'code'}}</td>
+                </tr>
+                <tr>
+                    <td>use currency:</td>
+                    <td>{{ b }}</td>
+                    <td>{{ "b | currency:'VND':'symbol':'4.2-2'" }}</td>
+                    <td>{{b | currency:'VND':'symbol':'4.2-2'}}</td>
+                </tr>
+            
+                <tr>
+                    <td>use currency:</td>
+                    <td>{{ b }}</td>
+                    <td>{{ "b | currency:'VND':'symbol':'4.2-2':'vi'" }}</td>
+                    <td>{{b | currency:'VND':'symbol':'4.2-2':'vi-VI'}}</td>
+                </tr>
+                <tr>
+                    <td>use currency:</td>
+                    <td>{{ b }}</td>
+                    <td>{{ "b | currency:'VND'" }}</td>
+                    <td>{{b | currency:'VND'}}</td>
+                </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
+
+<h1>6.Sử dụng DatePipe</h1>
+
+<div class="container">
+    <div class="col col-lg-7">
+        <table class="table">
+            <thead>
+              <tr class="table-info">
+                <th scope="col">Name Pipe</th>
+                <th scope="col">Input</th>
+                <th scope="col">Code</th>
+                <th scope="col">Output</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>use date:</td>
+                    <td>{{ today }}</td>
+                    <td>{{"today | date"}}</td>
+                    <td>{{today | date}}</td>
+                </tr>
+                <tr>
+                    <td>use date:</td>
+                    <td>{{ today }}</td>
+                    <td>{{ "today | date:'fullDate'" }}</td>
+                    <td>{{today | date:'fullDate'}}</td>
+                </tr>
+                <tr>
+                    <td>use time :</td>
+                    <td>{{ today }}</td>
+                    <td>{{ "today | date:'h:mm a z'" }}</td>
+                    <td>{{today | date:'h:mm a z'}}</td>
+                </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
+
+<h1>7.Custom pipe</h1>
+
